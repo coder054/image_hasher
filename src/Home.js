@@ -114,6 +114,9 @@ const Home = ({
 							<p className="imagemeta">
 								<span>SHA256:</span> {image.sha256}
 							</p>
+							<p className="imagemeta">
+								<span>PBKDF2:</span> {image.PBKDF2}
+							</p>
 						</div>
 					)}
 				</div>

@@ -28,6 +28,7 @@ export default produce((draft, action) => {
 				let src = getSrc(base64);
 				let sha1 = action.data.sha1;
 				let sha256 = action.data.sha256;
+				let PBKDF2 = action.data.PBKDF2;
 				let date = action.data.headers["last-modified"];
 				let size = action.data.headers["content-length"];
 				let existed =
@@ -41,6 +42,7 @@ export default produce((draft, action) => {
 						md5,
 						sha1,
 						sha256,
+						PBKDF2,
 						src,
 						date,
 						size,

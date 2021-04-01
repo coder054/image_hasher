@@ -28,12 +28,27 @@ const Home = ({
 		e.preventDefault();
 		await getImage(url);
 	};
+
+	const digestMessage = async (message) => {
+		// const encoder = new TextEncoder();
+		// const data = encoder.encode(message);
+		// const hash = await crypto.subtle.digest("SHA-256", data);
+		// console.log({ hash, aaa: hash.toString() });
+		// return hash;
+		/////////////////////////////
+	};
+
+
+
+
 	useEffect(() => {
+		digestMessage("aaa");
 		//TODO get data from localstorage to redux
 		// let a1 = JSON.parse(localStorage.getItem("images"));
 		// if (a1) {
 		// 	setImages(a1);
 		// }
+		//
 	}, []);
 	const image = images.filter((o) => {
 		return o.md5 === currentMd5;
@@ -94,10 +109,10 @@ const Home = ({
 								<span>MD5:</span> {image.md5}
 							</p>
 							<p className="imagemeta">
-								<span>SHA1:</span> {image.md5}
+								<span>SHA1:</span> {image.sha1}
 							</p>
 							<p className="imagemeta">
-								<span>SHA256:</span> {image.md5}
+								<span>SHA256:</span> {image.sha256}
 							</p>
 						</div>
 					)}

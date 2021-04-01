@@ -351,3 +351,12 @@ export const getSrc = (base64) => {
 export const truncate = (str, n) => {
 	return str.length > n ? str.substr(0, n - 1) + "..." : str;
 };
+
+export const toHexString = (byteArray) => {
+	var bufferView = new Uint8Array(byteArray);
+	return Array.prototype.map
+		.call(bufferView, function (byte) {
+			return ("0" + (byte & 0xff).toString(16)).slice(-2);
+		})
+		.join("");
+};
